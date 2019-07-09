@@ -13,7 +13,7 @@
  */
 
 // Useful global constants.
-define( 'WC_GATEWAY_MONEYBUTTON_VERSION', '0.1.0' );
+define( 'WC_GATEWAY_MONEYBUTTON_VERSION', '1.0.0-dev.1' );
 define( 'WC_GATEWAY_MONEYBUTTON_URL', plugin_dir_url( __FILE__ ) );
 define( 'WC_GATEWAY_MONEYBUTTON_PATH', plugin_dir_path( __FILE__ ) );
 define( 'WC_GATEWAY_MONEYBUTTON_INC', WC_GATEWAY_MONEYBUTTON_PATH . 'includes/' );
