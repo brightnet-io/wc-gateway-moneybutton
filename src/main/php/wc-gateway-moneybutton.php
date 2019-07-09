@@ -3,7 +3,7 @@
  * Plugin Name: Money Button Payment Gateway for WooCommerce
  * Plugin URI: https://brightnet.io/wc-gateway-moneybutton
  * Description:
- * Version:     0.1.0
+ * Version:     1.0.0-dev.1
  * Author:      brightnet.io
  * Author URI:  https://brightnet.io
  * Text Domain: wc-gateway-moneybutton
