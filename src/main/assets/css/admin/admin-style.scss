@@ -1,0 +1,52 @@
+/**
+ * WcGatewayMoneyButton - Admin Styles
+ */
+@import "../variables";
+
+.wc-gateway-moneybutton-meta-box {
+	display: flex;
+	flex-direction: column;
+	overflow-x: auto;
+
+}
+
+.wc-gateway-moneybutton-meta-box-row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#wc-gateway-moneybutton-mock-webhooks-metabox {
+
+	background: mix($red, $white, 60%);
+
+	* {
+		color: $white;
+	}
+
+	.wc-gateway-moneybutton-meta-box {
+		position: relative;
+
+		.overlay {
+
+			&.show {
+				display: flex;
+			}
+			align-items: center;
+			background-color: $overlay-bg;
+			bottom: 0;
+			display: none;
+			justify-content: center;
+			min-height: 100%;
+			min-width: 100%;
+			position: absolute;
+			top: 0;
+
+			img {
+				height: 16px;
+				width: 16px;
+			}
+
+		}
+	}
+}

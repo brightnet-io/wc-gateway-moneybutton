@@ -1,0 +1,7 @@
+src/main/assets/js/vendor
+src/main/assets/js/admin/vendor
+src/main/assets/js/frontend/vendor
+src/main/assets/js/shared/vendor
+gulp-tasks/
+bin/
+/target/

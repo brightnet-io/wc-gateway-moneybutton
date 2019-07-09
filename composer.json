@@ -1,0 +1,56 @@
+{
+  "name": "brightnet-io/wc-gateway-moneybutton",
+  "description": "Money Button Gateway for WooCommerce",
+  "authors": [
+    {
+      "name": "brightnet.io",
+      "email": "contact@brightnet.io"
+    }
+  ],
+  "require": {
+    "php": ">=7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "WcGatewayMoneyButton\\": "src/main/php/includes/classes"
+    }
+  },
+  "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "name" : "woocommerce/woo-develop",
+        "version": "3.6.1",
+        "source": {
+          "url": "https://github.com/woocommerce/woocommerce.git",
+          "type": "git",
+          "reference": "3.6.1"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "wordpress/wp-develop",
+        "version":"5.2.1",
+        "source": {
+          "url": "https://github.com/WordPress/wordpress-develop.git",
+          "type": "git",
+          "reference": "5.2.1"
+        }
+      }
+    }
+  ],
+  "require-dev": {
+    "phpunit/phpunit": "^6.5",
+    "10up/wp_mock": "~0.3.0",
+    "10up/phpcs-composer": "dev-master",
+    "maximebf/consolekit": "1.0.3",
+    "woocommerce/woo-develop": "3.6.1",
+    "wordpress/wp-develop": "5.2.1"
+  },
+  "scripts": {
+    "lint": "phpcs .",
+    "lint-fix": "phpcbf ."
+  }
+}

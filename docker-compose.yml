@@ -1,0 +1,58 @@
+version: '3'
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+    - "80:80"
+    - "443:443"
+    volumes:
+    - ./docker/nginx/conf.d:/etc/nginx/conf.d:cached
+    - ./docker/nginx/sites-enabled:/etc/nginx/sites-enabled:ro
+    - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:cached
+    - ./volumes/wordpress:/var/www/html:cached
+    - ./dist/:/var/www/html/wp-content/plugins/wc-gateway-moneybutton/dist/:ro
+    - ./docker/nginx/certs:/etc/nginx/certs:cached
+    - ./logs/nginx:/var/log/nginx:cached
+    depends_on:
+    - wordpress
+    networks:
+    - wc-gateway-moneybutton-net
+  wordpress:
+    image: wordpress:php7.1-fpm
+    volumes:
+    - ./volumes/wordpress:/var/www/html:cached
+    - ./src/main/php:/var/www/html/wp-content/plugins/wc-gateway-moneybutton
+    - ./dist:/var/www/html/wp-content/plugins/wc-gateway-moneybutton/dist
+    - ./docker/wordpress/php-fpm.d/www.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+    - ./logs/fpm:/var/log/fpm:cached
+    depends_on:
+    - mysql
+    networks:
+    - wc-gateway-moneybutton-net
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: 'db'
+      # So you don't have to use root, but you can if you like
+      MYSQL_USER: 'user'
+      # You can use whatever password you like
+      MYSQL_PASSWORD: 'password'
+      # Password for root access
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+    # <Port exposed> : < MySQL Port running inside container>
+    - '3306:3306'
+    expose:
+    # Opens port 3306 on the container
+    - '3306'
+    # Where our data will be persisted
+    volumes:
+    - ./volumes/mysql:/var/lib/mysql
+    command: --innodb-use-native-aio=0 --ignore-db-dir=lost+found
+    networks:
+    - wc-gateway-moneybutton-net
+
+
+networks:
+  wc-gateway-moneybutton-net:
+    driver: bridge
