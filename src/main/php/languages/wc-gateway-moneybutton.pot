@@ -1,0 +1,363 @@
+# Copyright (C) 2019 Money Button Payment Gateway for WooCommerce
+# This file is distributed under the same license as the Money Button Payment Gateway for WooCommerce package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Money Button Payment Gateway for WooCommerce 1.0.0-dev.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/php\n"
+"POT-Creation-Date: 2019-07-09 23:21:28+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: includes/classes/Admin/DBUpdater.php:229
+msgid "An database update query for WooCommerce Gateway MoneyButton failed. The plugin may be unusable. "
+msgstr ""
+
+#: includes/classes/Admin/DBUpdater.php:244
+msgid "Correct ordering of database update scripts failed. Updates were not performed"
+msgstr ""
+
+#. translators: the first placeholder is the minimum version of WooCommerce
+#. supported by this plugin. The second placeholder is the version of
+#. WooCommerce installed
+
+#: includes/classes/Admin/DependencyChecker.php:158
+msgid "WooCommerce  Gateway MoneyButton - The minimum WooCommerce version required for this plugin is %1$s. You are running %2$s."
+msgstr ""
+
+#. translators: the first placeholder is the minimum version of PHP supported
+#. by this plugin. The second placeholder is the version of PHP installed
+
+#: includes/classes/Admin/DependencyChecker.php:187
+msgid "WooCommerce MoneyButton Gateway - The minimum PHP version required for this plugin is %1$s. You are running %2$s."
+msgstr ""
+
+#: includes/classes/Admin/DependencyChecker.php:215
+msgid "WooCommerce MoneyButton Gateway is enabled, but a SSL certificate is not detected. MoneyButton will not work without SSL configured."
+msgstr ""
+
+#: includes/classes/Admin/Order/MockWebhookRequestsMetaBox.php:39
+msgid "Money Button Dev Mode"
+msgstr ""
+
+#: includes/classes/Admin/Order/PaymentStatusMetaBox.php:42
+msgid "Money Button Payment"
+msgstr ""
+
+#: includes/classes/Admin/Order/PaymentStatusMetaBox.php:58
+msgid "tx has been built but not yet signed"
+msgstr ""
+
+#: includes/classes/Admin/Order/PaymentStatusMetaBox.php:61
+msgid "tx has been signed, broadcast, and is valid"
+msgstr ""
+
+#: includes/classes/Admin/Order/PaymentStatusMetaBox.php:64
+msgid "tx has been confirmed in a block"
+msgstr ""
+
+#: includes/classes/Admin/Order/PaymentStatusMetaBox.php:66
+msgid "tx has been rejected by the network"
+msgstr ""
+
+#. translators: The first placeholder is the Payment ID that was returned from
+#. a successful 'swipe' of the Money Buttonn
+
+#: includes/classes/Admin/Order/PaymentStatusMetaBox.php:117
+msgid "Successful button swipe recorded with Payment ID %1$s. Waiting for Money Button payment notifications."
+msgstr ""
+
+#. translators: the first placeholder is the previously installed version of
+#. the plugin. The second placeholder is the new installed/updated version of
+#. the plugin .
+
+#: includes/classes/Admin/UpdateManager.php:123
+msgid "MoneyButton Gateway for WooCommerce: Database schema updated from version %1$s to version %2$s"
+msgstr ""
+
+#: includes/classes/Core/Plugin.php:247
+msgid "It has been placed on hold pending confirmation of payment from Money Button."
+msgstr ""
+
+#: includes/classes/Core/WcGatewayMoneyButtonLogger.php:83
+msgid "Could not initialize logger. WC_Logger unavailable. This typically means WooCommerce is not installed and active"
+msgstr ""
+
+#: includes/classes/Gateway/PaymentForm.php:116
+msgid "Invalid Money Button payment response"
+msgstr ""
+
+#. translators: the placeholder is the Money Button Payment ID
+
+#: includes/classes/Gateway/PaymentForm.php:123
+msgid "Money Button swipe successful. Waiting for payment confirmation [Payment ID: %1$s]"
+msgstr ""
+
+#: includes/classes/Gateway/PaymentGatewayImpl.php:160
+msgid "MoneyButton"
+msgstr ""
+
+#: includes/classes/Gateway/PaymentGatewayImpl.php:161
+msgid "Allow customers to pay with MoneyButton"
+msgstr ""
+
+#: includes/classes/Gateway/PaymentGatewayImpl.php:167
+msgid "Proceed to Payment"
+msgstr ""
+
+#. translators: the placeholder is the minimum order amount in the store
+#. currency .
+
+#: includes/classes/Gateway/PaymentGatewayImpl.php:237
+msgid "Sorry, your order total must be at least %1$s to pay with Money Button."
+msgstr ""
+
+#. translators: The first place is the Money Button Payment ID
+
+#: includes/classes/Gateway/PaymentGatewayImpl.php:342
+msgid "Money Button with Payment ID %1$s is valid. Order remains on hold pending notification of completed payment from Money Button."
+msgstr ""
+
+#. translators: the first placeholder is the Payment ID of the Money Button
+#. payment. The second placeholder is the order number .
+
+#: includes/classes/Gateway/PaymentGatewayImpl.php:380
+msgid "A COMPLETED  payment event with Payment ID %1$s was received from Money Button for order %2$s when it was in a CANCELLED status.  You may need to manually issue a refund"
+msgstr ""
+
+#. translators: the first placeholder is the Payment ID of the Money Button
+#. payment. The second placeholder is the order number, The third placehold is
+#. the order status when this error occured.
+
+#: includes/classes/Gateway/PaymentGatewayImpl.php:405
+msgid "A  completed payment notification with Payment ID: %1$s was received for Order No. %2$s with status %3$s when it did not require payment. Yoy may need to manually issue a refund for incorrect payment"
+msgstr ""
+
+#. translators: the first place holder is the amount (in fiat currency) of the
+#. completed payment. The second placeholder is the total amount of the order
+
+#: includes/classes/Gateway/PaymentGatewayImpl.php:425
+msgid "Money Button payment was completed, however payment amount, %1$.2f no longer matches order total %2$.2f. Manual intervention required to progress order."
+msgstr ""
+
+#. translators: the first placeholder is the Payment ID of the Money Button
+#. payment. The second placeholder is the order number
+
+#: includes/classes/Gateway/PaymentGatewayImpl.php:441
+msgid "Money Button payment with Payment ID %1$s complete for Order No. %2$s ."
+msgstr ""
+
+#. translators: the first placeholder is the Payment ID of the Money Button
+#. payment.
+
+#: includes/classes/Gateway/PaymentGatewayImpl.php:458
+msgid "Money Button payment with Payment ID %1$s complete however there was an unexpected error progressing to the next order status. It may need to be progressed to the next order status manually."
+msgstr ""
+
+#. translators: The first placeholder is the money button payment id
+
+#: includes/classes/Gateway/PaymentGatewayImpl.php:490
+msgid "Money Button payment with Payment ID %1$s Failed."
+msgstr ""
+
+#: includes/classes/Gateway/PaymentGatewaySettings.php:71
+msgid "Enable/Disable"
+msgstr ""
+
+#: includes/classes/Gateway/PaymentGatewaySettings.php:72
+msgid "Enable Money Button Payments"
+msgstr ""
+
+#: includes/classes/Gateway/PaymentGatewaySettings.php:79
+msgid "Title"
+msgstr ""
+
+#: includes/classes/Gateway/PaymentGatewaySettings.php:81
+msgid "This is what is shown during checkout as the payment option."
+msgstr ""
+
+#: includes/classes/Gateway/PaymentGatewaySettings.php:85
+msgid "Description"
+msgstr ""
+
+#: includes/classes/Gateway/PaymentGatewaySettings.php:87
+msgid "This controls the descriptive text which the user sees during checkout"
+msgstr ""
+
+#: includes/classes/Gateway/PaymentGatewaySettings.php:91
+msgid "Minimum Order Amount"
+msgstr ""
+
+#: includes/classes/Gateway/PaymentGatewaySettings.php:93
+msgid "The minimum total order amount required to use payment method. Leave empty to disable"
+msgstr ""
+
+#: includes/classes/Gateway/PaymentGatewaySettings.php:97
+msgid "Money Button Settings"
+msgstr ""
+
+#: includes/classes/Gateway/PaymentGatewaySettings.php:102
+msgid "Send To"
+msgstr ""
+
+#: includes/classes/Gateway/PaymentGatewaySettings.php:104
+msgid "Money Button User ID, or valid BSV Address. Hint: Your Money Button User ID is a number eg: 1234."
+msgstr ""
+
+#: includes/classes/Gateway/PaymentGatewaySettings.php:108
+msgid "Button Label"
+msgstr ""
+
+#: includes/classes/Gateway/PaymentGatewaySettings.php:110
+msgid "Label that appears inside your Money Button during payment/checkout"
+msgstr ""
+
+#: includes/classes/Gateway/PaymentGatewaySettings.php:114
+msgid "Button Id"
+msgstr ""
+
+#: includes/classes/Gateway/PaymentGatewaySettings.php:116
+msgid "The Button ID is an identifier submitted with the payment data. Or, put simply, 'where did this payment come from'.It will be displayed prominently on incoming payments in your Money Button details to help you identify the source of payment. "
+msgstr ""
+
+#: includes/classes/Gateway/PaymentGatewaySettings.php:123
+msgid "App Client Identifier"
+msgstr ""
+
+#: includes/classes/Gateway/PaymentGatewaySettings.php:125
+msgid "You application specific client identifier. You can find this on your Money Button profile under Apps heading."
+msgstr ""
+
+#: includes/classes/Gateway/PaymentGatewaySettings.php:129
+msgid "App WebHook Secret"
+msgstr ""
+
+#: includes/classes/Gateway/PaymentGatewaySettings.php:131
+msgid "Data that is sent with webhook requests from MoneyButton to verify that the request came from Money Button directly. "
+msgstr ""
+
+#: includes/classes/Gateway/PaymentGatewaySettings.php:138
+msgid "Advanced Settings"
+msgstr ""
+
+#: includes/classes/Gateway/PaymentGatewaySettings.php:146
+msgid "In dev mode the Money Button will be simulated when you swipe, and it will always be successful. In addition, when logged in as an admin, additional buttons will be rendered on the order pay screen to produce different simulated results."
+msgstr ""
+
+#: includes/classes/Gateway/PaymentGatewaySettings.php:157
+msgid "Enable additional debug level logging. DO NOT enable this unless specifically needed."
+msgstr ""
+
+#: includes/classes/Gateway/PaymentGatewaySettings.php:165
+msgid "Store the raw JSON received from Money Button webhook calls in the database."
+msgstr ""
+
+#. translators: The first place holder is the name of the configuration field
+#. that is required for the payment gateway to function
+
+#: includes/classes/Gateway/PaymentGatewaySettings.php:197
+#: includes/classes/Gateway/PaymentGatewaySettings.php:235
+msgid "%1$s is required. Payment gateway has been disabled"
+msgstr ""
+
+#: includes/classes/Gateway/PaymentGatewaySettings.php:278
+msgid "Gateway Settings"
+msgstr ""
+
+#. translators: The first place holder is the status of the event/update
+#. received from Money Button. The second placeholder is the Money Button
+#. PaymentID.  The third placeholder is the current status of the Payment
+
+#: includes/classes/Gateway/WebhookHandler.php:187
+msgid "An unexpected payment notification with status %1$s for Payment ID %2$s was received from Money Button when the Payment was already %3$s. This notification was ignored."
+msgstr ""
+
+#. translators: The first placeholder is the Money Button PaymentID. The
+#. ssecond placeholder is the blockchain transaction id of the event, which
+#. differed from the txid that was already received
+
+#: includes/classes/Gateway/WebhookHandler.php:202
+msgid "An additional 'COMPLETED' payment notification was received from Money Button for Payment ID %1$s with a different transaction id [%2$s] than before. This may be an additional payment and require a refund."
+msgstr ""
+
+#. translators: The first place holder is the status of the event/update
+#. received from Money Button. The second placeholder is the Money Button
+#. PaymentID.
+
+#: includes/classes/Gateway/WebhookHandler.php:227
+msgid "Could not process a payment notification  from Money Button with Status %1$s  for Payment ID %2$s because it did not contain any payment data. "
+msgstr ""
+
+#. translators: The first placeholder is the status of the payment event/update
+#. received from Money Button. The second placeholder is the Money Button
+#. PaymentID. The the third placeholder is invalid Blockchain transaction ID
+#. that was included in the event/update
+
+#: includes/classes/Gateway/WebhookHandler.php:240
+msgid "Could not process a payment notification  from Money Button with Status %1$s  for Payment ID %2$s because the transaction id with value '%3$s' is invalid. "
+msgstr ""
+
+#. translators: The first place holder the the status of the payment event. The
+#. second placeholder is the Money Button Payment ID. The third placholder is
+#. order id. The fourth placeholder is the current payment status of the order
+
+#: includes/classes/Payment/MoneyButtonPayment.php:765
+msgid "Unable to process event with status %1$s for Payment ID %2$s on Order %3$s with payment status %4$s."
+msgstr ""
+
+#. translators: the placeholder is a clickable URL that links to the
+#. woocommerce.com home page .
+
+#: includes/functions/core.php:167
+msgid "MoneyButton Gateway for WooCommerce  requires WooCommerce to be installed and active. You can download %s here."
+msgstr ""
+
+#: templates/admin/order/payment-status-meta-box.php:11
+msgid "Payment ID"
+msgstr ""
+
+#: templates/admin/order/payment-status-meta-box.php:17
+msgid "Status"
+msgstr ""
+
+#: templates/admin/order/payment-status-meta-box.php:26
+msgid "Amount - Fiat"
+msgstr ""
+
+#: templates/admin/order/payment-status-meta-box.php:32
+msgid "Amount - Satoshis"
+msgstr ""
+
+#: templates/admin/order/payment-status-meta-box.php:34
+msgid "The total number of \"satoshis\" sent to you after currency conversion"
+msgstr ""
+
+#: templates/admin/order/payment-status-meta-box.php:42
+msgid "Last Updated"
+msgstr ""
+
+#: templates/admin/order/payment-status-meta-box.php:44
+msgid "UTC time of last update from MoneyButton for this payment"
+msgstr ""
+
+#: templates/wc-gateway-moneybutton-paymentform-template.php:25
+msgid "Money Button with the following error message: "
+msgstr ""
+#. Plugin Name of the plugin/theme
+msgid "Money Button Payment Gateway for WooCommerce"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://brightnet.io/wc-gateway-moneybutton"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "brightnet.io"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://brightnet.io"
+msgstr ""
