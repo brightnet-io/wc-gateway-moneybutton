@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-    - image: circleci/php:7.1-node-browsers
+    - image: circleci/php@sha256:546583238c133f637ca4b4f5b8de86d45dd6aa8e855f849e0f8547cfce438f70
     - image: circleci/mysql:5.7
       environment:
         MYSQL_ROOT_PASSWORD: password
