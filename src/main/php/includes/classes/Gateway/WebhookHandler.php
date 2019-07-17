@@ -154,7 +154,7 @@ class WebhookHandler {
 					$order_id
 				)
 			);
-			$error = new \WP_Error( 422, 'Cheatin huh?' );
+			$error = new \WP_Error( 403, 'Cheatin huh?' );
 
 			wp_send_json_error( $error, $error->get_error_code() );
 		}
