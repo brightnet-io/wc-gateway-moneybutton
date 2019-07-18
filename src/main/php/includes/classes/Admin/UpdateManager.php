@@ -10,6 +10,7 @@
 
 namespace WcGatewayMoneyButton\Admin;
 
+use WcGatewayMoneyButton\Core\WcGatewayMoneyButtonException;
 use WcGatewayMoneyButton\Core\WcGatewayMoneyButtonLogger;
 use function WcGatewayMoneyButton\Core\code_version;
 
@@ -77,7 +78,7 @@ class UpdateManager {
 		$current_version = get_option( 'wc_gateway_moneybutton_version' );
 		$target_version  = code_version();
 		if ( $this->requires_update( $current_version, $target_version ) ) {
-
+			$this->logger->debug( sprintf( 'Update from version %1$s to version %2$s required', $current_version, $target_version ) );
 			do_action( 'wc_gateway_moneybutton_before_update' );
 			$update_result = $this->run_updates( $current_version, $target_version );
 			do_action( 'wc_gateway_moneybutton_after_update' );
@@ -112,22 +113,37 @@ class UpdateManager {
 	 * @return bool If updates occured
 	 */
 	protected function run_updates( string $current_version, string $target_version ): bool {
-		update_option( 'wc_gateway_moneybutton_version', $target_version );
 
+		$this->logger->debug( sprintf( 'Running updates from %1$s to version %2$s ', $current_version, $target_version ) );
 		// Code to perform the update go here
-		$result = $this->db_updater->maybe_update();
-		if ( true === $result ) {
+		$db_updated = false;
+		try {
+			$db_updated = $this->db_updater->maybe_update();
+			if ( true === $db_updated ) {
+				$this->admin_notices = new AdminNotices();
+				$notice              = sprintf(
+					/* translators: the first placeholder is the previously installed version of the plugin. The second placeholder is the new installed/updated version of the plugin . */
+					__( 'MoneyButton Gateway for WooCommerce: Database schema updated from version %1$s to version %2$s', 'wc-gateway-moneybutton' ),
+					$current_version,
+					$target_version
+				);
+				$this->admin_notices->add_notice( 'wc_gateway_moneybutton_db_updates', 'notice-upgrade', $notice, true );
+			}
+
+			update_option( 'wc_gateway_moneybutton_version', $target_version );
+		} catch ( WcGatewayMoneyButtonException $e ) {
 			$this->admin_notices = new AdminNotices();
 			$notice              = sprintf(
 				/* translators: the first placeholder is the previously installed version of the plugin. The second placeholder is the new installed/updated version of the plugin . */
-				__( 'MoneyButton Gateway for WooCommerce: Database schema updated from version %1$s to version %2$s', 'wc-gateway-moneybutton' ),
+				__( 'MoneyButton Gateway for WooCommerce: Fatal error updating from version %1$s to version %2$s', 'wc-gateway-moneybutton' ),
 				$current_version,
 				$target_version
 			);
-			$this->admin_notices->add_notice( 'wc_gateway_moneybutton_db_updates', 'notice-upgrade', $notice, true );
+			$this->admin_notices->add_notice( sprintf( 'wc_gateway_moneybutton_update_error_%1$s_%2$s', $current_version, $target_version ), 'notice-error', $notice, false );
 		}
+
 		// Here we are just returning the result of db updater, as it is currently the only update task
-		return $result;
+		return $db_updated;
 	}
 
 

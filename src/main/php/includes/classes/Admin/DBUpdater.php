@@ -29,6 +29,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 class DBUpdater {
 
 	/**
+	 * Logger
+	 *
+	 * @since 1.0.0
+	 * @access private
+	 *
+	 * @var \WcGatewayMoneyButton\Core\WcGatewayMoneyButtonLogger
+	 */
+	private $logger;
+
+	/**
 	 * Option name key for holding current schema version
 	 *
 	 * @since  0.1.0
@@ -120,12 +130,16 @@ class DBUpdater {
 	 * @throws \InvalidArgumentException If target version is lower than current version
 	 */
 	public function __construct( string $target_version, \wpdb $wpdb ) {
+		$this->logger = WcGatewayMoneyButtonLogger::get_logger();
 		// populate current_version
 		$this->current_version = get_option( self::$option_name_scheme_version );
+
 		// Default the current version for new installs.
 		if ( empty( $this->current_version ) ) {
 			$this->current_version = '0.0.0';
 			$this->start_version   = '0.0.0';
+		} else {
+			$this->start_version = $this->current_version;
 		}
 
 		// Don't support downgrades
@@ -174,6 +188,8 @@ CREATE TABLE ' . $this->payments_table_name . ' (
   )' . $this->wpdb->get_charset_collate() . ';',
 
 		];
+
+		$this->logger->debug( sprintf( 'DBUpdater. Current Version: %1$s, Start Version: %2$s, Target Version: %3$s', $this->current_version, $this->start_version, $this->target_version ) );
 	}
 
 
@@ -183,7 +199,7 @@ CREATE TABLE ' . $this->payments_table_name . ' (
 	 * @since 0.1.0
 	 *
 	 * @return bool  true if there where schema updates run.
-	 * @throws WcGatewayMoneyButton\Core\WcGatewayMoneyButtonException If there was an error during the update process
+	 * @throws WcGatewayMoneyButtonException If there was an error during the update process
 	 */
 	public function maybe_update(): bool {
 
