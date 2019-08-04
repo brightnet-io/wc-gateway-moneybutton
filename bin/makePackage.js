@@ -39,7 +39,7 @@ async function zip() {
 	} );
 
 	archive.pipe( output );
-	archive.directory( `${buildDir}/${pluginName}`, false );
+	archive.directory( `${buildDir}/${pluginName}`, pluginName );
 	archive.finalize();
 
 }
