@@ -26,6 +26,7 @@
 		<div class="wc-gateway-moneybutton-meta-box-attribute"><?php esc_html_e( 'Amount - Fiat', 'wc-gateway-moneybutton' ); ?></div>
 		<div class="wc-gateway-moneybutton-meta-box-label"><?php echo esc_html( $payment->get_currency() . ' ' . $payment->get_amount() ); ?></div>
 	</div>
+
 	<div class="wc-gateway-moneybutton-meta-box-row">
 		<div class="wc-gateway-moneybutton-meta-box-attribute">
 			<?php
@@ -35,6 +36,16 @@
 			?>
 		</div>
 		<div class="wc-gateway-moneybutton-meta-box-label"><?php echo esc_html( $payment->get_satoshis() ); ?></div>
+	</div>
+	<div class="wc-gateway-moneybutton-meta-box-row">
+		<div class="wc-gateway-moneybutton-meta-box-attribute">
+		<?php
+			esc_html_e( 'Exchange Rate', 'wc-gateway-moneybutton' );
+			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo wc_help_tip( __( 'Effective rate at time of payment', 'wc-gateway-moneybutton' ), false );
+		?>
+			</div>
+		<div class="wc-gateway-moneybutton-meta-box-label"><?php echo esc_html( $payment->get_effective_exchange() ); ?></div>
 	</div>
 	<div class="wc-gateway-moneybutton-meta-box-row">
 		<div class="wc-gateway-moneybutton-meta-box-attribute">
