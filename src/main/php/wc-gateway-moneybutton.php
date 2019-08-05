@@ -3,7 +3,7 @@
  * Plugin Name: Money Button Payment Gateway for WooCommerce
  * Plugin URI: https://brightnet.io/wc-gateway-moneybutton
  * Description:
- * Version:     1.0.0-beta.1
+ * Version:     1.0.0-beta.2
  * Author:      brightnet.io
  * Author URI:  https://brightnet.io
  * Text Domain: wc-gateway-moneybutton
@@ -13,7 +13,7 @@
  */
 
 // Useful global constants.
-define( 'WC_GATEWAY_MONEYBUTTON_VERSION', '1.0.0-beta.1' );
+define( 'WC_GATEWAY_MONEYBUTTON_VERSION', '1.0.0-beta.2' );
 define( 'WC_GATEWAY_MONEYBUTTON_URL', plugin_dir_url( __FILE__ ) );
 define( 'WC_GATEWAY_MONEYBUTTON_PATH', plugin_dir_path( __FILE__ ) );
 define( 'WC_GATEWAY_MONEYBUTTON_INC', WC_GATEWAY_MONEYBUTTON_PATH . 'includes/' );
